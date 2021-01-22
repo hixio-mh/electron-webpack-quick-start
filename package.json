@@ -6,15 +6,19 @@
     "dev": "electron-webpack dev",
     "compile": "electron-webpack",
     "dist": "yarn compile && electron-builder",
-    "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null"
+    "dist:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null",
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
   },
   "dependencies": {
-    "source-map-support": "^0.5.16"
+    "source-map-support": "^0.5.16",
+    "snyk": "^1.439.0"
   },
   "devDependencies": {
-    "electron": "8.2.0",
+    "electron": "10.2.0",
     "electron-builder": "^22.4.1",
     "electron-webpack": "^2.8.2",
     "webpack": "~4.42.1"
-  }
+  },
+  "snyk": true
 }
